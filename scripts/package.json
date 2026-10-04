@@ -1,0 +1,11 @@
+{
+  "name": "agent-09-scripts",
+  "private": true,
+  "description": "Scripts that generate report documents",
+  "scripts": {
+    "report": "node make_report.js"
+  },
+  "dependencies": {
+    "docx": "^9.0.0"
+  }
+}
