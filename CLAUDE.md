@@ -14,8 +14,14 @@
 ```
 agent_09/
 ├── CLAUDE.md      # Project rules (this file)
+├── .claude/
+│   └── skills/
+│       └── mk-ppt/    # Project-only skill: build/edit .pptx with python-pptx
+│           ├── SKILL.md
+│           ├── references/api.md   # python-pptx API by area, limits, workarounds
+│           └── scripts/            # build_deck.py (JSON spec → .pptx), pptx_tools.py (inspect/text/delete/move/duplicate)
 ├── research/      # Research results (.md, English)
-├── report/        # Final reports (.docx)
+├── report/        # Final reports (.docx) and presentations (.pptx)
 ├── scripts/       # Scripts that generate reports (Node.js, `docx` package)
 └── translate/     # Korean translations of .md files (same relative path, `_ko` suffix)
 ```
@@ -23,6 +29,7 @@ agent_09/
 - Save new research notes in `research/` and final reports in `report/`. Do not leave deliverables in the project root.
 - Do not overwrite existing deliverables; create new files with a date suffix (e.g. `_20261004`).
 - To regenerate a report: run `npm install` and then `npm run report` inside `scripts/`.
+- To make a presentation, use the `mk-ppt` skill. It needs Python 3.13 (`C:\Users\vivab\AppData\Local\Programs\Python\Python313\`) and python-pptx.
 
 ## Markdown files and translations
 

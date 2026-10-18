@@ -14,8 +14,14 @@
 ```
 agent_09/
 ├── CLAUDE.md      # 프로젝트 규칙 (이 파일)
+├── .claude/
+│   └── skills/
+│       └── mk-ppt/    # 프로젝트 전용 스킬: python-pptx로 .pptx 생성/수정
+│           ├── SKILL.md
+│           ├── references/api.md   # 영역별 python-pptx API, 한계, 우회 방법
+│           └── scripts/            # build_deck.py (JSON 스펙 → .pptx), pptx_tools.py (inspect/text/delete/move/duplicate)
 ├── research/      # 자료조사 결과 (.md, 영문)
-├── report/        # 최종 보고서 (.docx)
+├── report/        # 최종 보고서 (.docx)와 발표 자료 (.pptx)
 ├── scripts/       # 보고서 생성 스크립트 (Node.js, `docx` 패키지)
 └── translate/     # .md 파일의 한국어 번역본 (같은 상대 경로, `_ko` 접미사)
 ```
@@ -23,6 +29,7 @@ agent_09/
 - 새 조사 노트는 `research/`에, 최종 보고서는 `report/`에 저장한다. 결과물을 프로젝트 루트에 두지 않는다.
 - 기존 결과물은 덮어쓰지 않는다. 날짜 접미사를 붙인 새 파일을 만든다 (예: `_20261004`).
 - 보고서를 다시 만들 때는 `scripts/` 안에서 `npm install`을 실행한 뒤 `npm run report`를 실행한다.
+- 발표 자료를 만들 때는 `mk-ppt` 스킬을 사용한다. Python 3.13(`C:\Users\vivab\AppData\Local\Programs\Python\Python313\`)과 python-pptx가 필요하다.
 
 ## 마크다운 파일과 번역본
 
